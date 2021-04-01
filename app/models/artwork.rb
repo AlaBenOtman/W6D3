@@ -2,8 +2,8 @@
 # t.string :image_url, null: false, presence: true
 # t.integer :artist_id, null: false, presence: true
 
-class artwork < ApplicationRecord
-    validates :title, unqiueness: {scope: :artist_id}
+class Artwork < ApplicationRecord
+    validates :title, uniqueness: {scope: :artist_id}
   
 
     # def unqiue_individual_artwork
