@@ -4,7 +4,7 @@
 
 class Artwork < ApplicationRecord
     validates :title, uniqueness: {scope: :artist_id}
-  
+    
 
     # def unqiue_individual_artwork
     #   self.title.each do |artwork|

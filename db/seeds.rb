@@ -23,9 +23,12 @@
     loiliaiisa = Artwork.create!(title: "loiliaiisa", image_url: "www.loiliaiisa.com", artist_id: snoppy.id)
     hdhisa = Artwork.create!(title: "hdhisa", image_url: "www.hdhisa.com", artist_id: jay.id)
     aws = Artwork.create!(title: 'Shawshank Redemption, The', image_url: "www.ShawshankRedemp.com", artist_id: lucy.id)
-    aws = Artwork.create!(title: 'Pulp Fiction', image_url: "www.Pulp.com", artist_id: jackson.id)
+    fiction = Artwork.create!(title: 'Pulp Fiction', image_url: "www.Pulp.com", artist_id: jackson.id)
 
     ArtworkShare.create!(artwork_id: monaiisa.id, viewer_id: wows.id)
+    ArtworkShare.create!(artwork_id: nanaaiisa.id, viewer_id: jackson.id)
+    ArtworkShare.create!(artwork_id: hdhisa.id, viewer_id: wows.id)
+    ArtworkShare.create!(artwork_id: aws.id, viewer_id: lucy.id)
 
 
 

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.new(params.require(:user).permit(:name, :email))
+        user = User.new(user_params)
         
         if user.save
             render json: user
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     def update
         target = User.find(params[:id])
 
-        if target.update(params.require(:user).permit(:name, :email))
+        if target.update(user_params)
             redirect_to users_url(target)
         else 
             render json: target.error.full_messages, status: :unprocessable_entity
@@ -32,7 +32,16 @@ class UsersController < ApplicationController
         target = User.find(params[:id])
         
         target.destroy
-        redirect_to users_url
+       
+        render json: target
     end
+
+    private
+    
+    def user_params
+        params.require(:user).permit(:username)
+    end 
+
+
 
 end
